@@ -10,42 +10,49 @@ import {
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 
-import './checkout.styles.scss';
+//import './checkout.styles.scss';
+import {
+    CheckoutPageContainer,
+    CheckoutHeader,
+    HeaderBlock,
+    TotalContainer,
+    TestWarning,
+} from './checkout.styles';
 
 const CheckoutPage = ({ cartItems, total }) => (
-    <div className="checkout-page">
-        <div className="checkout-header">
-            <div className="header-block">
+    <CheckoutPageContainer>
+        <CheckoutHeader>
+            <HeaderBlock>
                 <span>Product</span>
-            </div>
-            <div className="header-block">
+            </HeaderBlock>
+            <HeaderBlock>
                 <span>Description</span>
-            </div>
-            <div className="header-block">
+            </HeaderBlock>
+            <HeaderBlock>
                 <span>Quantity</span>
-            </div>
-            <div className="header-block">
+            </HeaderBlock>
+            <HeaderBlock>
                 <span>Price</span>
-            </div>
-            <div className="header-block">
+            </HeaderBlock>
+            <HeaderBlock>
                 <span>Remove</span>
-            </div>
-        </div>
+            </HeaderBlock>
+        </CheckoutHeader>
         {cartItems.map(cartItem => (
             <CheckoutItem key={cartItem.id} cartItem={cartItem} />
         ))}
-        <div className="total">
+        <TotalContainer>
             <span>Total: ${total}</span>
-        </div>
-        <div className="test-warning">
+        </TotalContainer>
+        <TestWarning>
             <small>Please use following test credit card for payments</small>
             <br />
             Card number: 4242 4242 4242 4242
             <br />
             Exp: 01/22 CVV: 123
-        </div>
+        </TestWarning>
         <StripeCheckoutButton price={total} />
-    </div>
+    </CheckoutPageContainer>
 );
 
 const mapStateToProps = createStructuredSelector({
