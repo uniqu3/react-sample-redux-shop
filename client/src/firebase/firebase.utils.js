@@ -45,7 +45,7 @@ export const addCollectionAndDocuments = async (
 
     const batch = firestore.batch();
 
-    objectsToAdd.forEach(obj => {
+    objectsToAdd.forEach((obj) => {
         const newDocRef = collectionRef.doc();
         batch.set(newDocRef, obj);
     });
@@ -53,8 +53,8 @@ export const addCollectionAndDocuments = async (
     return await batch.commit();
 };
 
-export const convertCollectionsSnapshotToMap = collections => {
-    const transformedCollection = collections.docs.map(docSnapshot => {
+export const convertCollectionsSnapshotToMap = (collections) => {
+    const transformedCollection = collections.docs.map((docSnapshot) => {
         const { title, items } = docSnapshot.data();
 
         return {
@@ -73,7 +73,7 @@ export const convertCollectionsSnapshotToMap = collections => {
 
 export const getCurrentUser = () => {
     return new Promise((resolve, reject) => {
-        const unsubscribe = auth.onAuthStateChanged(userAuth => {
+        const unsubscribe = auth.onAuthStateChanged((userAuth) => {
             unsubscribe();
             resolve(userAuth);
         }, reject);

@@ -7,7 +7,7 @@ const StripeCheckoutButton = ({ price }) => {
     const priceForStripe = price * 100;
     const publishableKey = process.env.REACT_APP_STRIPE_KEY;
 
-    const onToken = token => {
+    const onToken = (token) => {
         axios({
             url: 'payment',
             method: 'post',
@@ -16,11 +16,11 @@ const StripeCheckoutButton = ({ price }) => {
                 token,
             },
         })
-            .then(response => {
+            .then((response) => {
                 alert('Payment was successful');
             })
-            .catch(error => {
-                console.log('Paymnet error: ', JSON.parse(error));
+            .catch((error) => {
+                console.log('Payment error: ', JSON.parse(error));
                 alert('There was an issue with your payment.');
             });
     };

@@ -10,7 +10,6 @@ import {
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 
-//import './checkout.styles.scss';
 import {
     CheckoutPageContainer,
     CheckoutHeader,
@@ -38,7 +37,7 @@ const CheckoutPage = ({ cartItems, total }) => (
                 <span>Remove</span>
             </HeaderBlock>
         </CheckoutHeader>
-        {cartItems.map(cartItem => (
+        {cartItems.map((cartItem) => (
             <CheckoutItem key={cartItem.id} cartItem={cartItem} />
         ))}
         <TotalContainer>

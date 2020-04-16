@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-//import './sign-in.styles.scss';
 import {
     SignInContainer,
     SignInTitle,
@@ -24,13 +23,13 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 
     const { email, password } = userCredentials;
 
-    const handleSubmit = async event => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         emailSignInStart(email, password);
     };
 
-    const handleChange = event => {
+    const handleChange = (event) => {
         const { value, name } = event.target;
 
         setCredentials({ ...userCredentials, [name]: value });
@@ -73,7 +72,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     );
 };
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
     googleSignInStart: () => dispatch(googleSignInStart()),
     emailSignInStart: (email, password) =>
         dispatch(emailSignInStart({ email, password })),

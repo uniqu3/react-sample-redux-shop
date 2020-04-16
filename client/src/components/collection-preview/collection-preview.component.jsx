@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 
 import CollectionItem from '../collection-item/collection-item.component';
 
-//import './collection-preview.styles.scss';
 import {
     CollectionPreviewContainer,
     TitleContainer,
@@ -20,7 +19,7 @@ const CollectionPreview = ({ title, items, history, match, routeName }) => (
         <PreviewContainer>
             {items
                 .filter((item, index) => index < 4)
-                .map(item => (
+                .map((item) => (
                     <CollectionItem key={item.id} item={item} />
                 ))}
         </PreviewContainer>
