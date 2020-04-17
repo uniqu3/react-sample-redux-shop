@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import CustomButton from '../custom-button/custom-button.component';
 
 export const CollectionItemContainer = styled.div`
-    width: 22vw;
+    width: 40vw;
     display: flex;
     flex-direction: column;
     height: 350px;
@@ -10,23 +10,38 @@ export const CollectionItemContainer = styled.div`
     position: relative;
 
     &:hover {
-        .image {
-            opacity: 0.8;
-        }
-
         button {
-            opacity: 0.85;
             display: flex;
+        }
+    }
+
+    @media screen and (min-width: 800px) {
+        width: 22vw;
+        &:hover {
+            .image {
+                opacity: 0.8;
+            }
+
+            button {
+                opacity: 0.85;
+            }
         }
     }
 `;
 
 export const AddButton = styled(CustomButton)`
     width: 80%;
-    opacity: 0.7;
     position: absolute;
     top: 255px;
-    display: none;
+    min-width: unset;
+    opacity: 0.95;
+
+    @media screen and (min-width: 800px) {
+        display: none;
+        opacity: 0.7;
+        padding: 0 10px 0 10px;
+        min-width: 165px;
+    }
 `;
 
 export const BackgroundImage = styled.div`
