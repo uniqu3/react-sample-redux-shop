@@ -32,7 +32,7 @@ export const OptionsContainer = styled.div`
     align-items: center;
     justify-content: flex-end;
 
-    @media screen and (min-width: 800px;) {
+    @media screen and (min-width: 800px) {
         width: 50%;
     }
 `;
