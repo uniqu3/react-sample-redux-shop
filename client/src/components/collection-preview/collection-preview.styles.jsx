@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const CollectionPreviewContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-bottom: 30px;
 
     @media screen and (min-width: 800px) {
@@ -15,6 +14,8 @@ export const TitleContainer = styled.h1`
     font-size: 28px;
     margin-bottom: 25px;
 `;
+
+TitleContainer.displayName = 'TitleContainer';
 
 export const PreviewContainer = styled.div`
     display: grid;

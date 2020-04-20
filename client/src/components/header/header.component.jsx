@@ -18,7 +18,7 @@ import {
 } from './header.styles';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
-const Header = ({ currentUser, hidden, signOutStart }) => (
+export const Header = ({ currentUser, hidden, signOutStart }) => (
     <HeaderContainer>
         <LogoContainer to="/" className="logo-container">
             <Logo className="logo" />

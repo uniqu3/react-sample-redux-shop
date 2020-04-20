@@ -11,12 +11,16 @@ export const CartIconContainer = styled.div`
     cursor: pointer;
 `;
 
+CartIconContainer.displayName = 'CartIconContainer';
+
 export const CartItemCountContainer = styled.span`
     position: absolute;
     font-size: 10px;
     font-weight: bold;
     bottom: 12px;
 `;
+
+CartItemCountContainer.displayName = 'CartItemCountContainer';
 
 export const CartShoppingIcon = styled(ShoppingIcon)`
     width: 24px;
